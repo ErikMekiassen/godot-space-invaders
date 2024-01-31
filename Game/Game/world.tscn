@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dw3j52c767rn2"]
+[gd_scene load_steps=16 format=3 uid="uid://dw3j52c767rn2"]
 
 [ext_resource type="Script" path="res://Game/world.gd" id="1_hpg0j"]
 [ext_resource type="Script" path="res://Game/BGWorld.gd" id="2_5v600"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://dnjx83qvdhfdj" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X -Rotary Star 2.png" id="11_0fjh7"]
 [ext_resource type="Texture2D" uid="uid://bhgjqqsd53x4b" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X -Rotary Star.png" id="12_y43u2"]
 [ext_resource type="PackedScene" uid="uid://dkygw7q6xrudi" path="res://Player/Player.tscn" id="13_nf6el"]
-[ext_resource type="PackedScene" uid="uid://by7qvposqq35i" path="res://Game/Laser/Laser.tscn" id="14_51sko"]
 [ext_resource type="PackedScene" uid="uid://bqbj5icrf28j2" path="res://Enemies/Naira/Fighter/enemy_nairan_fighter.tscn" id="15_7xjwt"]
 
 [sub_resource type="GDScript" id="GDScript_lgg3v"]
@@ -135,9 +134,6 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("13_nf6el")]
 position = Vector2(348, 1158)
-
-[node name="Laser" parent="." instance=ExtResource("14_51sko")]
-position = Vector2(130, 1240)
 
 [node name="Laser_container" type="Node2D" parent="."]
 
