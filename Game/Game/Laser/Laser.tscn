@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://by7qvposqq35i"]
+
+[ext_resource type="Script" path="res://Game/Laser/Laser.gd" id="1_o2ks6"]
+[ext_resource type="Texture2D" uid="uid://c2vgoe0iwjjxc" path="res://sprites/Foozle_2DS0011_Void_MainShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Auto cannon bullet.png" id="2_md3xg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l4j5"]
+atlas = ExtResource("2_md3xg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2irku"]
+atlas = ExtResource("2_md3xg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15bbn"]
+atlas = ExtResource("2_md3xg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1xfs"]
+atlas = ExtResource("2_md3xg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlqv8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l4j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2irku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15bbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1xfs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2b87y"]
+radius = 3.0
+height = 12.0
+
+[node name="Laser" type="Area2D"]
+script = ExtResource("1_o2ks6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jlqv8")
+frame = 1
+frame_progress = 0.292362
+
+[node name="hitBody" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2b87y")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 10)
+scale = Vector2(0.35, 0.2)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

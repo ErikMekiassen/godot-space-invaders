@@ -1,0 +1,123 @@
+[gd_scene load_steps=14 format=3 uid="uid://cuo3mebmd2jrt"]
+
+[ext_resource type="Texture2D" uid="uid://ci7necwepmggy" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 01 - Solid colour.png" id="1_7wefu"]
+[ext_resource type="Script" path="res://main.gd" id="1_h7qop"]
+[ext_resource type="Script" path="res://BG.gd" id="2_00qfa"]
+[ext_resource type="Texture2D" uid="uid://lyn6q01atrrn" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 02 - Shadows.png" id="2_sja6u"]
+[ext_resource type="Texture2D" uid="uid://dq6ntewyfhyhb" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 02 - Shadows 2.png" id="3_3dcvb"]
+[ext_resource type="Texture2D" uid="uid://ebbglbfpo3xn" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 03 - Stars.png" id="4_070u5"]
+[ext_resource type="Texture2D" uid="uid://8chjqlwi0an" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 03 - Stars 2.png" id="5_durjo"]
+[ext_resource type="Texture2D" uid="uid://yrgrwgf8xgis" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X - Big Star 2.png" id="6_k8506"]
+[ext_resource type="Texture2D" uid="uid://cssqlfbxwqbb" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X - Big Star.png" id="7_8hnls"]
+[ext_resource type="Texture2D" uid="uid://5ro6iq2wrply" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X -Black hole.png" id="8_8ggk6"]
+[ext_resource type="Texture2D" uid="uid://dnjx83qvdhfdj" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X -Rotary Star 2.png" id="9_aorih"]
+[ext_resource type="Texture2D" uid="uid://bhgjqqsd53x4b" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X -Rotary Star.png" id="10_qbrem"]
+
+[sub_resource type="GDScript" id="GDScript_p8v71"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_h7qop")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_00qfa")
+
+[node name="SolidColor" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/SolidColor"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("1_7wefu")
+centered = false
+
+[node name="Shadows2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Shadows2"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("2_sja6u")
+centered = false
+
+[node name="Shadows" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Shadows"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("3_3dcvb")
+centered = false
+
+[node name="Stars2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars2"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("4_070u5")
+centered = false
+
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("5_durjo")
+centered = false
+
+[node name="BigStar2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BigStar2"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("6_k8506")
+centered = false
+
+[node name="BigStar" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BigStar"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("7_8hnls")
+centered = false
+
+[node name="BlackHole" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BlackHole"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("8_8ggk6")
+centered = false
+
+[node name="RotaryStar2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/RotaryStar2"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("9_aorih")
+centered = false
+
+[node name="RotaryStar" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(5760, 0)
+script = SubResource("GDScript_p8v71")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/RotaryStar"]
+scale = Vector2(3.556, 3.556)
+texture = ExtResource("10_qbrem")
+centered = false
+
+[node name="Start" type="Button" parent="."]
+offset_left = 160.0
+offset_top = 547.0
+offset_right = 560.0
+offset_bottom = 697.0
+tooltip_text = "Press here to start the game"
+theme_override_colors/font_color = Color(0.843137, 0.631373, 0.819608, 1)
+theme_override_font_sizes/font_size = 70
+text = "start"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

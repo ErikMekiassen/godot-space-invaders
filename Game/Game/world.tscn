@@ -1,0 +1,154 @@
+[gd_scene load_steps=17 format=3 uid="uid://dw3j52c767rn2"]
+
+[ext_resource type="Script" path="res://Game/world.gd" id="1_hpg0j"]
+[ext_resource type="Script" path="res://Game/BGWorld.gd" id="2_5v600"]
+[ext_resource type="Texture2D" uid="uid://ci7necwepmggy" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 01 - Solid colour.png" id="3_dk1q4"]
+[ext_resource type="Texture2D" uid="uid://lyn6q01atrrn" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 02 - Shadows.png" id="4_jptyb"]
+[ext_resource type="Texture2D" uid="uid://dq6ntewyfhyhb" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 02 - Shadows 2.png" id="5_ky0g8"]
+[ext_resource type="Texture2D" uid="uid://ebbglbfpo3xn" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 03 - Stars.png" id="6_x7jy8"]
+[ext_resource type="Texture2D" uid="uid://8chjqlwi0an" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background  - Layer 03 - Stars 2.png" id="7_nugo7"]
+[ext_resource type="Texture2D" uid="uid://yrgrwgf8xgis" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X - Big Star 2.png" id="8_5lqk0"]
+[ext_resource type="Texture2D" uid="uid://cssqlfbxwqbb" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X - Big Star.png" id="9_b82d7"]
+[ext_resource type="Texture2D" uid="uid://5ro6iq2wrply" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X -Black hole.png" id="10_7s73d"]
+[ext_resource type="Texture2D" uid="uid://dnjx83qvdhfdj" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X -Rotary Star 2.png" id="11_0fjh7"]
+[ext_resource type="Texture2D" uid="uid://bhgjqqsd53x4b" path="res://sprites/Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Split up/Starry background - Layer X -Rotary Star.png" id="12_y43u2"]
+[ext_resource type="PackedScene" uid="uid://dkygw7q6xrudi" path="res://Player/Player.tscn" id="13_nf6el"]
+[ext_resource type="PackedScene" uid="uid://by7qvposqq35i" path="res://Game/Laser/Laser.tscn" id="14_51sko"]
+[ext_resource type="PackedScene" uid="uid://bqbj5icrf28j2" path="res://Enemies/Naira/Fighter/enemy_nairan_fighter.tscn" id="15_7xjwt"]
+
+[sub_resource type="GDScript" id="GDScript_lgg3v"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_hpg0j")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_5v600")
+
+[node name="SolidColor" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/SolidColor"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("3_dk1q4")
+centered = false
+
+[node name="Shadows2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Shadows2"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("4_jptyb")
+centered = false
+
+[node name="Shadows" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Shadows"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("5_ky0g8")
+centered = false
+
+[node name="Stars2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars2"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("6_x7jy8")
+centered = false
+
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("7_nugo7")
+centered = false
+
+[node name="BigStar2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BigStar2"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("8_5lqk0")
+centered = false
+
+[node name="BigStar" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BigStar"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("9_b82d7")
+centered = false
+
+[node name="BlackHole" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BlackHole"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("10_7s73d")
+centered = false
+
+[node name="RotaryStar2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/RotaryStar2"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("11_0fjh7")
+centered = false
+
+[node name="RotaryStar" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 5760)
+script = SubResource("GDScript_lgg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/RotaryStar"]
+position = Vector2(720, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("12_y43u2")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("13_nf6el")]
+position = Vector2(348, 1158)
+
+[node name="Laser" parent="." instance=ExtResource("14_51sko")]
+position = Vector2(130, 1240)
+
+[node name="Laser_container" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 21.0
+offset_right = 175.0
+offset_bottom = 90.0
+text = "Back"
+
+[node name="EnemyNairanFighter" parent="." instance=ExtResource("15_7xjwt")]
+position = Vector2(356, 584)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
